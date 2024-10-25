@@ -1,0 +1,16 @@
+{
+    "name": "daw2/dsw2024-tienda-form",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Daw2\\Dsw2024TiendaForm\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "EstebanAaron",
+            "email": "lr96aron@gmail.com"
+        }
+    ],
+    "require": {}
+}
