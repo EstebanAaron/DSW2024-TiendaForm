@@ -8,14 +8,16 @@
 </head>
 <body>
   <?php
+  require_once "connection.php";
+
   if (empty($_POST['rate'])) {
     echo '<h1 class="error">No se encuentra valoracion</h1>';
   }
   else{
     $rate =$_POST['rate'];
     $date = new DateTime();
-    $fileName='rates/'.$date->format('Y-m-d-H-i').'.csv';
-    file_put_contents($fileName,$rate.', ', FILE_APPEND );
+    $rows = $link->exec("INSERT INTO rates (date , rate) VALUES (NOW(), $rate)");
+    $link = null;
   }
   ?>
   <h1>Muchas gracias por la valoracion</h1>
