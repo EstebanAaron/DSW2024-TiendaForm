@@ -32,10 +32,11 @@
   <?php
   require_once 'connection.php';
 
-  $result = $link->query("SELECT date_format(date, '%Y-%c-%d %H:%i') as dateformat , count(rate) as count , avg(rate) as avg from rates group by dateformat");
-  while ($rate = $result->fetch(PDO::FETCH_OBJ)) {
+  $stadistics= $store->getStadistics();
+
+  foreach ($stadistics as $stat) {
     printf("<tr><td>%s</td><td>%s</td><td>%d</td><td>%.2f</td></tr>",
-    substr($rate->dateformat,0,10),substr($rate->dateformat,10),$rate->count ,$rate->avg);
+    substr($stat['dateformat'],0,10),substr($stat['dateformat'],10),$stat['count'] ,$stat['avg']);
       
   }
 

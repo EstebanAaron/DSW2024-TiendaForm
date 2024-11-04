@@ -1,9 +1,8 @@
 <?php
-$host = "localhost";
-$user = "root";
-$password = "";
-$db = "ratingdb";
 
-$dsn = "mysql:host=$host;dbname=$db";
+use Daw2\Dsw2024TiendaForm\StoreDB;
 
-$link = new PDO($dsn,$user,$password);
+require '../vendor/autoload.php';
+
+
+ $store = new StoreDB('localhost','root','','ratingdb');

@@ -15,9 +15,7 @@
   }
   else{
     $rate =$_POST['rate'];
-    $date = new DateTime();
-    $rows = $link->exec("INSERT INTO rates (date , rate) VALUES (NOW(), $rate)");
-    $link = null;
+    $store->addRate($rate);
   }
   ?>
   <h1>Muchas gracias por la valoracion</h1>
